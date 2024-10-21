@@ -61,14 +61,30 @@ module.exports = defineConfig({
 ![image](https://github.com/user-attachments/assets/522083b7-c2bb-4ddb-bc2e-ad9a8f906e64)
 
 
+ Configurar o arquivo cypress.config.js conforme a figura abaixo.
+![image](https://github.com/user-attachments/assets/6ccb6b27-8994-44b8-9f22-ff6e5a0a885f)
+
+const cucumber = require('cypress-cucumber-preprocessor').default;
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      on('file:preprocessor', cucumber())
+    },
+    specPattern: "cypress/e2e/step_definitions/common/*.feature"
+  },
+});
+
 
 
 
  Gerar relatório em html com o framework Mocha:
+
  
  npm install --save-dev mochawesome
 
- Configurar o arquivo cypress.config.js conforme a figura abaixo.
- ![image](https://github.com/user-attachments/assets/1b79d9d8-8128-4932-82f4-1a28a8799418)
+
 
 Rodar o comando npx cypress run --reporter mochawesome para gerar o relatório.
