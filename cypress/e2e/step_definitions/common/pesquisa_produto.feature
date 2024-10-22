@@ -3,6 +3,7 @@ Feature: pesquisa_produto
     Eu como usuário quero pesquisar produtos eletrônicos no site Advantage Shopping.
 
     Background:
+
         Given que eu acesse a página Advantage Shopping
 
     Scenario: Pesquisar produto

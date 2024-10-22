@@ -3,6 +3,7 @@ Feature: inclusão_carrinho
     Eu como usuário que inserir um produto no carrinho de compras.
 
     Background:
+
         Given que eu acesse a página Advantage Shopping
 
     Scenario: Incluir produto no carrinho
